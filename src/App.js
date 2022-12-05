@@ -2,6 +2,9 @@ import React from "react";
 import "./App.css";
 import Cards from "./components/Cards/Cards";
 import Nav from "./components/Nav/Nav";
+import About from "./components/About/About";
+import { Routes, Route } from "react-router-dom";
+import Detail from "./components/Detail/Detail";
 
 function App() {
   let [characters, setCharacters] = React.useState([]);
@@ -30,10 +33,15 @@ function App() {
       <div>
         <Nav onSearch={onSearch} />
       </div>
+      <Routes>
+        <Route path={"/about"} element={<About />} />
+        <Route
+          path={"/home"}
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
       <hr />
-      <div>
-        <Cards characters={characters} onClose={onClose} />
-      </div>
     </div>
   );
 }

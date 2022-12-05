@@ -10,11 +10,11 @@ export default function SearchBar(props) {
 
   return (
     <div className={style.divSearchBar}>
-      <label htmlFor="">Id: </label>
+      <label htmlFor=""></label>
       <input
         type="search"
         name="search"
-        placeholder="Ingrese ID"
+        placeholder="Ingrese ID del personaje"
         onChange={(e) => setCharacter((character = e.target.value))}
       />
       <button type="submit" onClick={() => props.onSearch(character)}>

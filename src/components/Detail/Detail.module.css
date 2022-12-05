@@ -1,0 +1,19 @@
+.detail {
+  background-color: #aef90f;
+  opacity: 0.9;
+  /* width: 48rem; */
+  /* height: 20rem; */
+  color: black;
+  border-radius: 1rem;
+  text-align: left;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem;
+  padding: 2rem;
+}
+
+.detail img {
+  width: 15rem;
+  border-radius: 1rem;
+}
