@@ -1,0 +1,9 @@
+.divNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.divNav img {
+  width: 16rem;
+}

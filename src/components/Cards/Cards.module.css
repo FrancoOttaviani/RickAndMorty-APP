@@ -1,0 +1,7 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  /* max-width: fit-content; */
+  /* flex-direction: row; */
+  /* width: 95%; */
+}
