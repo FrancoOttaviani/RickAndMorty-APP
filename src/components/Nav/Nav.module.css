@@ -7,3 +7,14 @@
 .divNav img {
   width: 16rem;
 }
+.divNav img:hover {
+  width: 16.5rem;
+  transition: 0.5s;
+}
+
+.divNav .iconAbout {
+  width: 6rem;
+}
+.divNav .iconAbout:hover {
+  width: 7rem;
+}

@@ -3,17 +3,25 @@ import SearchBar from "../SearchBar/SearchBar";
 import style from "./Nav.module.css";
 import logo from "../../img/logo.png";
 import { Link } from "react-router-dom";
+import aboutUs from "../../img/aboutUs.png";
 export default function Nav(props) {
   return (
     <div className={style.divNav}>
-      {/* <h3>Rick & Morty APP</h3> */}
       <Link to={"/home"}>
         <img src={logo} alt="logo" srcset="" />
       </Link>
       <Link to={"/about"}>
-        <h4>About</h4>
+        <img
+          className={style.iconAbout}
+          src={aboutUs}
+          alt="Icon AboutUS"
+          srcset=""
+        />
       </Link>
       <SearchBar onSearch={props.onSearch} />
+      <Link to="/">
+        <button className={style.iconAbout}>LogOut</button>
+      </Link>
     </div>
   );
 }

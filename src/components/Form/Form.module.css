@@ -1,0 +1,54 @@
+.cardForm {
+  width: 20rem;
+  background-color: #aefa32;
+  opacity: 0.9;
+  border-radius: 15%;
+}
+
+.cardForm form {
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  justify-content: space-around;
+  font-size: x-large;
+  padding: 2rem;
+}
+
+.cardForm form label {
+  text-align: initial;
+  margin-left: 1rem;
+}
+
+/* estilo y comportamiento de boton "enviar" del FORMULARIO */
+.cardForm form button {
+  height: 50px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #d06098;
+  font-weight: bold;
+  font-size: large;
+}
+.cardForm form button:hover {
+  background-color: #916981;
+  cursor: hand;
+}
+.cardForm form button:active {
+  background-color: rgb(25, 47, 66);
+}
+
+/* comportamiento y estilos de los inputs del formulario */
+.cardForm form input {
+  height: 50px;
+  border-radius: 15px;
+  text-align: justify;
+  padding-left: 1rem;
+  font-size: large;
+}
+
+.danger {
+  color: darkred;
+  border-color: red;
+  margin-top: 0px;
+  text-align: left;
+  font-size: 1rem;
+}

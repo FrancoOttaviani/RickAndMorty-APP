@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Cards from "./components/Cards/Cards";
 import Nav from "./components/Nav/Nav";
 import About from "./components/About/About";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Detail from "./components/Detail/Detail";
+import Form from "./components/Form/Form";
 
 function App() {
-  let [characters, setCharacters] = React.useState([]);
+  const navigate = useNavigate();
+  const [characters, setCharacters] = React.useState([]);
+
+  const [acces, setAcces] = React.useState(false);
+  const userName = "francootta@hotmail.com";
+  const password = "1234";
+
+  const login = (userData) => {
+    if (userData.userName === userName && userData.password === password) {
+      setAcces(true);
+      navigate("/home");
+    }
+  };
+
+  useEffect(() => {
+    !acces && navigate("/");
+  }, [acces]);
+
+  const location = useLocation();
 
   const onSearch = (character) => {
     if (characters.find((el) => el.id === parseInt(character)))
@@ -30,9 +49,7 @@ function App() {
 
   return (
     <div className="App" style={{ padding: "25px" }}>
-      <div>
-        <Nav onSearch={onSearch} />
-      </div>
+      <div>{location.pathname !== "/" && <Nav onSearch={onSearch} />}</div>
       <Routes>
         <Route path={"/about"} element={<About />} />
         <Route
@@ -40,6 +57,7 @@ function App() {
           element={<Cards characters={characters} onClose={onClose} />}
         />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/" element={<Form login={login} />} />
       </Routes>
       <hr />
     </div>
